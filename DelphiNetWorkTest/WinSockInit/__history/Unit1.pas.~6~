@@ -1,44 +1,37 @@
-unit MainUnit;
+unit Unit1;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, WinSock;
 
 type
   TForm1 = class(TForm)
-    lst1: TListBox;
-    btn1: TButton;
   private
     { Private declarations }
+    function WinSockInit: BOOL;
   public
     { Public declarations }
   end;
 
-  TFooThread = class(TThread)
-    protected
-      procedure Execute; override;
-  end;
-
 var
   Form1: TForm1;
+  WSAData: TWSAData;
+
+const
+  Version: Word = $0202;
 
 implementation
 
 {$R *.dfm}
 
-{ TFooThread }
-const
-  MaxSize = 128;
+{ TForm1 }
 
-var
-  ThreadID : Integer;
-
-procedure TFooThread.Execute;
+function TForm1.WinSockInit: BOOL;
 begin
-  inherited;
-
+  if WSAStartup(Version, WSAData) = ERROR_SUCCESS then
+  
 end;
 
 end.

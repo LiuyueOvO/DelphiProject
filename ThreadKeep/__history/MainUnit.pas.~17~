@@ -10,7 +10,9 @@ type
   TForm1 = class(TForm)
     lst1: TListBox;
     btn1: TButton;
+    procedure btn1Click(Sender: TObject);
   private
+    procedure ThreadsDone(Sender: TObject);
     { Private declarations }
   public
     { Public declarations }
@@ -37,8 +39,30 @@ var
   GlobalArray : array[1..MaxSize] of Integer;
 
 procedure TFooThread.Execute;
+var
+  i, index: Integer; 
 begin
-  OnTerminate := ThreadEnd;
+  Inc(ThreadID);
+  index := ThreadID;
+  OnTerminate := ThreadsDone;
+  for I := 1 to MaxSize do
+  begin
+    GlobalArray[i] := i;
+    Form1.lst1.Items.Add(IntToStr(i) + '        ' + IntToStr(index) + '号线程正在执行操作')); 
+  end;
+    
+end;
+
+{ TForm1 }
+
+procedure TForm1.btn1Click(Sender: TObject);
+begin
+  TFooThread.Create(False); 
+  TFooThread.Create(False);
+end;
+
+procedure TForm1.ThreadsDone(Sender: TObject);
+begin
 
 end;
 

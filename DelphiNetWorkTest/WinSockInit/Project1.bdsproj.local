@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/06/12 21:58:05.078.pas,C:\Users\liuyue\Documents\RAD Studio\Projects\Unit1.pas=G:\GitHub\DelphiProject\DelphiNetWorkTest\WinSockInit\Unit1.pas</Transaction>
+    <Transaction>2019/06/12 21:58:05.078.dfm,C:\Users\liuyue\Documents\RAD Studio\Projects\Unit1.dfm=G:\GitHub\DelphiProject\DelphiNetWorkTest\WinSockInit\Unit1.dfm</Transaction>
+    <Transaction>2019/06/12 21:58:08.772.bdsproj,C:\Users\liuyue\Documents\RAD Studio\Projects\Project1.bdsproj=G:\GitHub\DelphiProject\DelphiNetWorkTest\WinSockInit\Project1.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

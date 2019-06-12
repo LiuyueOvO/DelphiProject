@@ -1,10 +1,10 @@
-unit MainUnit;
+unit Unit1;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, WinSock;
 
 type
   TForm1 = class(TForm)

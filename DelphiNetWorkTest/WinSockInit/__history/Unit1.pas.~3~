@@ -1,24 +1,18 @@
-unit MainUnit;
+unit Unit1;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, WinSock;
 
 type
   TForm1 = class(TForm)
-    lst1: TListBox;
-    btn1: TButton;
   private
     { Private declarations }
+    function WinSockInit: BOOL;
   public
     { Public declarations }
-  end;
-
-  TFooThread = class(TThread)
-    protected
-      procedure Execute; override;
   end;
 
 var

@@ -37,7 +37,7 @@ const
 var
   NumID : Integer = 0;
   GlobalArray : array[1..MaxSize] of Integer;
-  cs: TRTLCriticalSection;
+  hMutex: THandle;
 
 procedure TFooThread.Execute;
 var
@@ -46,27 +46,31 @@ begin
   Inc(NumID);
   index := NumID;
   OnTerminate := Form1.ThreadsDone;
-  EnterCriticalSection(cs);
-  for I := 1 to MaxSize do
+  if (WaitForSingleObject(hMutex, INFINITE)) = WAIT_OBJECT_0 then
   begin
-    GlobalArray[i] := i;
-    Form1.lst1.Items.Add(IntToStr(i) + '        ' + IntToStr(index) + '号线程正在执行操作');
+    for I := 1 to MaxSize do
+    begin
+      GlobalArray[i] := i;
+      Form1.lst1.Items.Add(IntToStr(i) + '        ' + IntToStr(index) + '号线程正在执行操作');
+    end;
   end;
-  LeaveCriticalSection(cs);
+  ReleaseMutex(hMutex);
+  if (index = 2) then
+    CloseHandle(hMutex);
+  
 end;
 
 { TForm1 }
 
 procedure TForm1.btn1Click(Sender: TObject);
 begin
-  InitializeCriticalSection(cs);
+  hMutex := CreateMutex(nil, False, nil);
   TFooThread.Create(False); 
   TFooThread.Create(False);
 end;
 
 procedure TForm1.ThreadsDone(Sender: TObject);
 begin
-  DeleteCriticalSection(cs);
   lst1.Items.Add('--------------------');
 end;
 
