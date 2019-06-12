@@ -1,0 +1,44 @@
+unit TNumThreadUnit;
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+  TNumThread = class(TThread)
+  private
+    { Private declarations }   
+    Answer: Integer;
+  protected
+    procedure GetAnswer;
+    procedure Execute; override;
+  end;
+
+implementation
+uses
+  MyThreadMain;
+
+var
+  i: Integer;
+
+procedure TNumThread.Execute;
+begin
+  FreeOnTerminate := True;
+  for I := 0 to 5000000 do
+  begin
+    if Terminated then Break;
+    
+    Inc(Answer,Round(Abs(Sin(Sqrt(i * 87)))));
+    Synchronize(GetAnswer);
+  end;  
+end;
+
+procedure TNumThread.GetAnswer;
+begin
+  Form1.Label1.Caption := IntToStr(Answer);
+  Form1.lst1.Items.Add(IntToStr(i) + ':' + IntToStr(Answer));
+  Form1.lst1.Selected[Form1.lst1.Items.Count - 1] = True;
+end;
+
+end.

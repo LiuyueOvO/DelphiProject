@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/06/11 09:17:42.914.pas,C:\Users\liuyue\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\liuyue\Desktop\Delphi\ThreadKeep\MainUnit.pas</Transaction>
+    <Transaction>2019/06/11 09:17:42.914.dfm,C:\Users\liuyue\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\liuyue\Desktop\Delphi\ThreadKeep\MainUnit.dfm</Transaction>
+    <Transaction>2019/06/11 09:17:55.919.bdsproj,C:\Users\liuyue\Documents\RAD Studio\Projects\Project1.bdsproj=C:\Users\liuyue\Desktop\Delphi\ThreadKeep\MainForm.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

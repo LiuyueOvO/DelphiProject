@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/06/09 19:33:08.696.pas,C:\Users\liuyue\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\liuyue\Desktop\Delphi\DllTest\MainApp.pas</Transaction>
+    <Transaction>2019/06/09 19:33:08.696.dfm,C:\Users\liuyue\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\liuyue\Desktop\Delphi\DllTest\MainApp.dfm</Transaction>
+    <Transaction>2019/06/09 19:39:50.317.bdsproj,C:\Users\liuyue\Documents\RAD Studio\Projects\Project1.bdsproj=C:\Users\liuyue\Desktop\Delphi\DllTest\MainAppUnit.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>

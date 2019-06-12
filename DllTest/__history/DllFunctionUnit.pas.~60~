@@ -1,0 +1,54 @@
+unit DllFunctionUnit;
+
+interface
+
+uses
+  Windows, Forms, Dialogs;
+
+  function ShowMyDialog(aHandle: THandle; nFlag: Integer):Integer;stdcall;
+  function ShowDllForm(aHandle: THandle; pTitle: pChar):ShortString;stdcall;
+  function ShowDllFormLess(aHandle: THandle; pTitle: pChar):Integer;stdcall;
+
+implementation
+uses
+  DllFormUnit;
+
+function ShowMyDialog(aHandle: THandle; nFlag: Integer):Integer;stdcall;
+begin
+  Application.Handle := aHandle;
+  if nFlag = 0 then
+    Application.MessageBox('0号弹框','提示消息',MB_OK);
+  case nFlag of
+    1:
+      Application.MessageBox('1号弹框','提示消息',MB_OK);
+    2:
+      Application.MessageBox('2号弹框','提示消息',MB_YESNO + MB_ICONINFORMATION);
+    3:
+      Application.MessageBox('3号弹框','提示消息',MB_YESNOCANCEL + MB_ICONSTOP);
+  end;
+end;
+
+function ShowDllForm(aHandle: THandle; pTitle: pChar):ShortString;stdcall;
+var
+  DllForm: TForm1;
+begin
+  Application.Handle := aHandle; 
+  DllForm := TForm1.Create(Application);
+  try            
+    DllForm.Caption := pTitle;
+    DllForm.ShowModal;
+  finally
+    DllForm.Free;
+  end;
+end;
+
+function ShowDllFormLess(aHandle: THandle; pTitle: pChar):Integer;stdcall;
+begin
+  Application.Handle := aHandle;
+  if Form1 <> nil then Form1 := nil;
+  Form1 := TForm1.Create(Application);
+  Form1.Caption := pTitle;
+  Form1.Show;
+end;
+
+end.

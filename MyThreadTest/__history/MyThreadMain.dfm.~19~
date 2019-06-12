@@ -1,0 +1,74 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Main_Form'
+  ClientHeight = 403
+  ClientWidth = 850
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 120
+  TextHeight = 16
+  object Label1: TLabel
+    Left = 64
+    Top = 56
+    Width = 339
+    Height = 52
+    AutoSize = False
+    Caption = '0'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -43
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 96
+    Top = 296
+    Width = 75
+    Height = 25
+    Caption = #21551#21160#32447#31243
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object btn1: TButton
+    Left = 192
+    Top = 296
+    Width = 75
+    Height = 25
+    Caption = #25346#36215#32447#31243
+    TabOrder = 1
+    OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 288
+    Top = 296
+    Width = 75
+    Height = 25
+    Caption = #21796#36215#32447#31243
+    TabOrder = 2
+    OnClick = btn2Click
+  end
+  object btn3: TButton
+    Left = 392
+    Top = 296
+    Width = 75
+    Height = 25
+    Caption = #32456#27490#32447#31243
+    TabOrder = 3
+    OnClick = btn3Click
+  end
+  object lst1: TListBox
+    Left = 432
+    Top = 24
+    Width = 239
+    Height = 241
+    ItemHeight = 16
+    TabOrder = 4
+  end
+end
